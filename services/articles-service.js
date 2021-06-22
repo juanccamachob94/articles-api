@@ -52,7 +52,8 @@ module.exports = {
     Article.findByPk(id)
       .then(article => {
         if(article)
-          article.update({ title: request.body.title, content: request.body.content })
+          article.update({ title: req.body.title, content: req.body.content },
+            { where: { id: id } })
             .then(article => { res.json(article); })
         else res.status(404).send();
       })
