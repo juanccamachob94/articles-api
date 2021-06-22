@@ -19,8 +19,11 @@
     "database": "d1b5sqflajc6c4",
     "host": "ec2-3-234-22-132.compute-1.amazonaws.com",
     "dialect": "postgres",
+    "ssl": true,
+    "rejectUnauthorized": false,
     "dialectOptions": {
-      "ssl": true
+      "ssl": true,
+      "rejectUnauthorized": false
     }
   }
 }
