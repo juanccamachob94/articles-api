@@ -13,10 +13,20 @@ module.exports = (sequelize, DataTypes) => {
   };
   Article.init({
     title: {
-      type: DataTypes.STRING
+      allowNull: false,
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: { msg: 'El título no puede estar vacío' },
+        notNull: { msg: 'El título no puede ser nulo' }
+      }
     },
     content: {
-      type: DataTypes.TEXT
+      allowNull: false,
+      type: DataTypes.TEXT,
+      validate: {
+        notEmpty: { msg: 'El contenido no puede estar vacío' },
+        notNull: { msg: 'El contenido no puede ser nulo' }
+      }
     }
   }, {
     sequelize,
