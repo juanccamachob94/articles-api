@@ -35,7 +35,6 @@ module.exports = {
   },
 
   index: (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
     Article.findAll().then(articles => { res.json(articles); })
   },
 
